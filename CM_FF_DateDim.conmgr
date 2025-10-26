@@ -1,0 +1,110 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CM_FF_DateDim"
+  DTS:DTSID="{842CCA16-3ADB-4D3F-8D0D-F476A2F094C7}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="G:\My Drive\Study\Msc AI\Module 2 - Big Data\Assignments\Individual\Data\Source\GeneratedDateTime_Dim_2006-2026-2.txt">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="10"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="FullDate"
+          DTS:DTSID="{D3A72D88-4D3F-47A3-9584-D9E0BED235EC}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DateName"
+          DTS:DTSID="{0DE3D7DC-F0B2-49A9-AA39-B1737EE6ED6A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DayOfWeek"
+          DTS:DTSID="{6F0FF651-F6FE-4B5F-86C8-B93A5C499828}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="20"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DayNameOfWeek"
+          DTS:DTSID="{CF991BFF-0898-4EDF-84B3-F954DE9700C5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DayOfYear"
+          DTS:DTSID="{9045228B-6983-43BF-B66C-FF7F5787E4F9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="WeekOfYear"
+          DTS:DTSID="{DB8A3743-7CB9-47CF-B852-627BE9F1A667}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="20"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="MonthName"
+          DTS:DTSID="{9592C5F8-DF6B-40A9-81F4-2DF314BCD6DC}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="MonthOfYear"
+          DTS:DTSID="{F8E6722D-464C-4AD8-91ED-61BCEC601A61}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="CalendarQuarter"
+          DTS:DTSID="{7669FAA9-4B30-42F9-92A3-5382F406F221}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="CalendarYear"
+          DTS:DTSID="{C433AB86-DCF1-4563-9F34-3ED367A612C7}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
