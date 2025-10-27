@@ -7,14 +7,18 @@ Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ABC_DWH", "ABC_DWH.dtproj",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{643121E4-B319-48FE-A28C-63BCEF34A7D5}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\Scripts\ConsolidatedScriptDWHCreation.sql = ..\..\..\Scripts\ConsolidatedScriptDWHCreation.sql
 		CreateSCHEMA.sql = CreateSCHEMA.sql
+		..\..\..\Scripts\DataImportScriptLibraryConsolidated.sql = ..\..\..\Scripts\DataImportScriptLibraryConsolidated.sql
 		DropTables.sql = DropTables.sql
+		..\..\..\Scripts\ExecureProcExportDWHtoCSV.sql = ..\..\..\Scripts\ExecureProcExportDWHtoCSV.sql
+		sp_ExportFiles.sql = sp_ExportFiles.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DimTable", "DimTable", "{250A2DA5-6395-46D4-8B5F-F7CD6C0B7B3F}"
 	ProjectSection(SolutionItems) = preProject
-		CreateDimDate.sql = CreateDimDate.sql
 		CreateDimBrand.sql = CreateDimBrand.sql
+		CreateDimDate.sql = CreateDimDate.sql
 		CreateDimOutlet.sql = CreateDimOutlet.sql
 		CreateDimProduct.sql = CreateDimProduct.sql
 		CreateDimProductType.sql = CreateDimProductType.sql
@@ -28,9 +32,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ETL", "ETL", "{151CBFB8-11C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FactTable", "FactTable", "{366215B9-2CC5-474B-AE49-FFC82CCBD5A3}"
 	ProjectSection(SolutionItems) = preProject
-		CreateFactPurchaseOrder.sql = CreateFactPurchaseOrder.sql
 		CreateFactInventorySnapshot.sql = CreateFactInventorySnapshot.sql
+		CreateFactPurchaseOrder.sql = CreateFactPurchaseOrder.sql
 		CreateFactReceipt.sql = CreateFactReceipt.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{79BA68D2-A906-4876-B956-3D7B494C39A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hive", "Hive", "{85FD5789-4ADC-426E-B935-BE388DAD0EA3}"
+	ProjectSection(SolutionItems) = preProject
+		DimBrand.sql = DimBrand.sql
+		DimDate.sql = DimDate.sql
+		DimOutlet.sql = DimOutlet.sql
+		DimProduct.sql = DimProduct.sql
+		DimProductType.sql = DimProductType.sql
+		DimSupplier.sql = DimSupplier.sql
+		FactInventorySnapshot.sql = FactInventorySnapshot.sql
+		FactPurchaseOrder.sql = FactPurchaseOrder.sql
+		FactReceipt.sql = FactReceipt.sql
 	EndProjectSection
 EndProject
 Global
@@ -48,5 +67,7 @@ Global
 		{250A2DA5-6395-46D4-8B5F-F7CD6C0B7B3F} = {643121E4-B319-48FE-A28C-63BCEF34A7D5}
 		{151CBFB8-11CF-47FF-B550-AA906BD11921} = {643121E4-B319-48FE-A28C-63BCEF34A7D5}
 		{366215B9-2CC5-474B-AE49-FFC82CCBD5A3} = {643121E4-B319-48FE-A28C-63BCEF34A7D5}
+		{79BA68D2-A906-4876-B956-3D7B494C39A2} = {643121E4-B319-48FE-A28C-63BCEF34A7D5}
+		{85FD5789-4ADC-426E-B935-BE388DAD0EA3} = {643121E4-B319-48FE-A28C-63BCEF34A7D5}
 	EndGlobalSection
 EndGlobal

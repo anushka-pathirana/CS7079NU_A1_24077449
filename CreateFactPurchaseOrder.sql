@@ -28,8 +28,8 @@ CREATE TABLE abc_dwh.FactPurchaseOrder
     UnitCost            DECIMAL(19,4) NULL,  -- cost per ordered unit (base currency)
     ExtendedCost        AS (ISNULL(UnitCost,0) * ISNULL(OrderQty,0)) PERSISTED,
 
-    CurrencyCode        VARCHAR(10) NULL,     -- degenerate if no DimCurrency
-    UOM                 VARCHAR(20) NULL,
+    CurrencyCode        NVARCHAR(10) NULL,     -- degenerate if no DimCurrency
+    UOM                 NVARCHAR(20) NULL,
 
     CreatedDate         DATETIME    NOT NULL DEFAULT GETDATE(),
     MsgKey              UNIQUEIDENTIFIER NULL,

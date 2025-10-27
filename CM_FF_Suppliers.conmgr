@@ -18,10 +18,10 @@
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x0009_"
           DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="SupplierName"
-          DTS:DTSID="{1111B84F-29A0-467F-B4CA-BB29F101DE40}"
+          DTS:DTSID="{7C22DC1A-35E3-4012-B7D0-6A7C5DC45CA1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Description"
-          DTS:DTSID="{1C96B928-DC3B-4B4F-889F-C0DFD36B70FA}"
+          DTS:DTSID="{B738022B-21BF-4503-95A9-C0390A73F563}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Phone"
-          DTS:DTSID="{8DBEB8DB-AF51-4E37-846C-25C2148CCE7D}"
+          DTS:DTSID="{C1F537FC-0ED7-4A8C-B902-502A7A26647F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Email"
-          DTS:DTSID="{5A5FE54F-68E6-4F8D-930F-472E31CDB6F0}"
+          DTS:DTSID="{4E0C3EFA-51E2-4F44-A461-E6DF5E9A3A87}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Fax"
-          DTS:DTSID="{D527F6AA-1094-45E3-9C5C-BC70EF142495}"
+          DTS:DTSID="{0CBA7453-55FE-4AF7-BF72-809F3453EB64}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FirstLineAddress"
-          DTS:DTSID="{21E45A9A-3FA7-4927-9B1B-09B9263963BB}"
+          DTS:DTSID="{F32BCB69-EE3C-4922-BC17-DBB996D43FAC}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="PostCode"
-          DTS:DTSID="{233CB990-82D1-4595-9092-5EFB571D4170}"
+          DTS:DTSID="{C85BECD6-7973-4A40-8964-D3B9B9DE695A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="City"
-          DTS:DTSID="{4EE58FBF-CE02-4D1E-A6DF-3FDAF1D40292}"
+          DTS:DTSID="{456434A1-735D-45F8-AE36-BDE46FA5794C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="State"
-          DTS:DTSID="{48BD731D-F255-4757-A298-55EBE88F825E}"
+          DTS:DTSID="{F2EE98E3-1001-4522-9CD5-EDA4A5E63679}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -102,7 +102,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="CountryID"
-          DTS:DTSID="{5CDBC2CF-E396-4EBA-A2EA-0E2B99D33D52}"
+          DTS:DTSID="{AC893905-9888-4DF1-895B-15F75D28F317}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

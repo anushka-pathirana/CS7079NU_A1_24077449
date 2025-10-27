@@ -12,17 +12,17 @@ GO
 CREATE TABLE abc_dwh.DimProduct
 (
     ProductKey         INT IDENTITY(1,1) PRIMARY KEY,        -- Surrogate key for DWH joins
-    ProductSKU         VARCHAR(50)     NOT NULL,             -- Natural business key from source (e.g., 'SO6677')
-    ProductName        VARCHAR(255)    NOT NULL,             -- e.g., 'Manfrotto MT057C3 Carbon Fibre Tripod'
-    [Description]      VARCHAR(255)    NULL,
-    [Condition]        VARCHAR(50)     NULL,                 -- e.g., 'New', 'Display', 'Refurbished'
+    ProductSKU         NVARCHAR(50)     NOT NULL,             -- Natural business key from source (e.g., 'SO6677')
+    ProductName        NVARCHAR(255)    NOT NULL,             -- e.g., 'Manfrotto MT057C3 Carbon Fibre Tripod'
+    [Description]      NVARCHAR(255)    NULL,
+    [Condition]        NVARCHAR(50)     NULL,                 -- e.g., 'New', 'Display', 'Refurbished'
 
     -- Foreign Keys to other dimensions
     ProductTypeKey     INT             NOT NULL,             -- FK → DimProductType
     BrandKey           INT             NOT NULL,             -- FK → DimBrand
     SupplierKey        INT             NULL,                 -- FK → DimSupplier (optional, some data may be null)
 
-    Tags               VARCHAR(255)    NULL,                 -- e.g., 'FILTERS, TRIPODS'
+    Tags               NVARCHAR(255)    NULL,                 -- e.g., 'FILTERS, TRIPODS'
     CostPrice          DECIMAL(18,2)   NULL,
     RetailPrice        DECIMAL(18,2)   NULL,
     CurrentStockLevel  INT             NULL,

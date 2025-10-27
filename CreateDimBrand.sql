@@ -13,9 +13,9 @@ GO
 CREATE TABLE abc_dwh.DimBrand
 (
     BrandKey           INT IDENTITY(1,1) PRIMARY KEY,       -- Surrogate key (PK)
-    BrandName          VARCHAR(100)    NOT NULL,            -- e.g. 'Sony', 'Toshiba', 'Samsung'
-    BrandDescription   VARCHAR(255)    NULL,                -- Optional: long description
-    CountryOfOrigin    VARCHAR(100)    NULL,                -- Optional: where brand is headquartered
+    BrandName          NVARCHAR(100)    NOT NULL,            -- e.g. 'Sony', 'Toshiba', 'Samsung'
+    BrandDescription   NVARCHAR(255)    NULL,                -- Optional: long description
+    CountryOfOrigin    NVARCHAR(100)    NULL,                -- Optional: where brand is headquartered
     IsActive           BIT             NOT NULL DEFAULT 1,  -- Flag to track active/inactive status
     CreatedDate        DATETIME        NOT NULL DEFAULT GETDATE(),  -- ETL insertion timestamp
     UpdatedDate        DATETIME        NULL,                 -- Optional: track last update

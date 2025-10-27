@@ -15,15 +15,15 @@ CREATE TABLE abc_dwh.DimSupplier
     SupplierKey        INT IDENTITY(1,1) PRIMARY KEY,   -- Surrogate PK
 
     -- Natural/business attributes (from SampleOfSuppliers.txt)
-    SupplierName       VARCHAR(150)   NOT NULL,          -- e.g., 'SONY', 'JVC', 'Samsung'
-    [Description]      VARCHAR(255)   NULL,
-    Phone              VARCHAR(50)    NULL,
-    Email              VARCHAR(150)   NULL,
-    Fax                VARCHAR(50)    NULL,
-    FirstLineAddress   VARCHAR(255)   NULL,
-    PostCode           VARCHAR(20)    NULL,
-    City               VARCHAR(100)   NULL,
-    [State]            VARCHAR(100)   NULL,
+    SupplierName       NVARCHAR(150)   NOT NULL,          -- e.g., 'SONY', 'JVC', 'Samsung'
+    [Description]      NVARCHAR(255)   NULL,
+    Phone              NVARCHAR(50)    NULL,
+    Email              NVARCHAR(150)   NULL,
+    Fax                NVARCHAR(50)    NULL,
+    FirstLineAddress   NVARCHAR(255)   NULL,
+    PostCode           NVARCHAR(20)    NULL,
+    City               NVARCHAR(100)   NULL,
+    [State]            NVARCHAR(100)   NULL,
     CountryID          INT            NULL,              -- Optionally FK to a DimCountry later
 
     -- DW/ETL management

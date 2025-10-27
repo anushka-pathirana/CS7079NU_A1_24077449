@@ -16,8 +16,8 @@ CREATE TABLE abc_dwh.FactReceipt
     OutletKey           INT         NOT NULL,  -- Receiving site/DC
 
     -- Degenerate dims
-    ReceiptNumber       VARCHAR(50) NOT NULL,  -- GRN/ASN/Receipt ID
-    PONumber            VARCHAR(50) NULL,      -- Link to PO if available
+    ReceiptNumber       NVARCHAR(50) NOT NULL,  -- GRN/ASN/Receipt ID
+    PONumber            NVARCHAR(50) NULL,      -- Link to PO if available
     POLineNumber        INT         NULL,
 
     -- Measures
@@ -26,8 +26,8 @@ CREATE TABLE abc_dwh.FactReceipt
     UnitCost            DECIMAL(19,4) NULL,    -- landed or invoice cost if known
     ExtendedCost        AS (ISNULL(UnitCost,0) * ISNULL(ReceivedQty,0)) PERSISTED,
 
-    BatchLot            VARCHAR(50)  NULL,
-    UOM                 VARCHAR(20)  NULL,
+    BatchLot            NVARCHAR(50)  NULL,
+    UOM                 NVARCHAR(20)  NULL,
 
     CreatedDate         DATETIME     NOT NULL DEFAULT GETDATE(),
     MsgKey              UNIQUEIDENTIFIER NULL,

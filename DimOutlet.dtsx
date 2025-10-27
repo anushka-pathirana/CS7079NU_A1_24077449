@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{6486BABD-5C9B-4C9D-B6F5-29608AC8C038}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{BE73BC6E-F0B2-4710-9F03-EBF6B4ADA6EB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -74,6 +74,13 @@
                       cachedName="OutletName"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[OutletName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[OutletCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OutletCode"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[OutletCode]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -106,6 +113,33 @@
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
                           name="AggregationColumnId">#{Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[OutletName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[OutletCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[OutletCode]"
+                      name="OutletCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[OutletCode]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -169,6 +203,13 @@
                       cachedName="OutletName"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[OutletName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregate 1.Inputs[Aggregate Input 1].Columns[OutletCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OutletCode"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[OutletCode]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -201,6 +242,33 @@
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
                           name="AggregationColumnId">#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[OutletName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregate 1.Outputs[Aggregate Output 1].Columns[OutletCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Aggregate 1.Outputs[Aggregate Output 1].Columns[OutletCode]"
+                      name="OutletCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[OutletCode]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -263,6 +331,12 @@
                       cachedLength="50"
                       cachedName="OutletName"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Aggregate 2.Inputs[Aggregate Input 1].Columns[OutletCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OutletCode"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletCode]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -295,6 +369,33 @@
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
                           name="AggregationColumnId">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Aggregate 2.Outputs[Aggregate Output 1].Columns[OutletCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Aggregate 2.Outputs[Aggregate Output 1].Columns[OutletCode]"
+                      name="OutletCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletCode]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -355,6 +456,29 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[OutletName]"
                       name="OutletName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER]([TRIM](#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[DestinationOutlet]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(TRIM(DestinationOutlet))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[OutletCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[OutletCode]"
+                      name="OutletCode"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -438,6 +562,29 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[OutletName]"
                       name="OutletName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER]([TRIM](#{Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[DestinationOutletID]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(TRIM(DestinationOutletID))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[OutletCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[OutletCode]"
+                      name="OutletCode"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -760,7 +907,7 @@
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [abc_dwh].[DimOutlet]) [refTable]
-where [refTable].[OutletName] = ?</property>
+where [refTable].[OutletName] = ? and [refTable].[OutletCode] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -791,12 +938,12 @@ where [refTable].[OutletName] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="OutletKey" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OutletName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="OutletKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OutletCode" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OutletName" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OutletType" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AddressLine1" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AddressLine2" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvince" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Phone" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Email" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ManagerName" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsActive" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CreatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MsgKey" dataType="DT_GUID" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ExportFlag" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\Aggregate 2.Outputs[Aggregate Output 1].Columns[OutletName]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task\Aggregate 2.Outputs[Aggregate Output 1].Columns[OutletName]};#{Package\Data Flow Task\Aggregate 2.Outputs[Aggregate Output 1].Columns[OutletCode]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -836,6 +983,23 @@ where [refTable].[OutletName] = ?</property>
                           name="CopyFromReferenceColumn" />
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[OutletCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OutletCode"
+                      lineageId="Package\Data Flow Task\Aggregate 2.Outputs[Aggregate Output 1].Columns[OutletCode]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">OutletCode</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -852,7 +1016,7 @@ where [refTable].[OutletName] = ?</property>
                       refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[OutletName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Copy Column"
-                      length="255"
+                      length="150"
                       lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[OutletName]"
                       name="OutletName"
                       truncationRowDisposition="FailComponent">
@@ -861,6 +1025,21 @@ where [refTable].[OutletName] = ?</property>
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
                           name="CopyFromReferenceColumn">OutletName</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[OutletCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[OutletCode]"
+                      name="OutletCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">OutletCode</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -977,17 +1156,24 @@ where [refTable].[OutletName] = ?</property>
                       cachedName="OutletName"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutletName]"
                       lineageId="Package\Data Flow Task\Aggregate 2.Outputs[Aggregate Output 1].Columns[OutletName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OutletCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OutletCode"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutletCode]"
+                      lineageId="Package\Data Flow Task\Aggregate 2.Outputs[Aggregate Output 1].Columns[OutletCode]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutletKey]"
-                      dataType="i8"
+                      dataType="i4"
                       name="OutletKey" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutletName]"
                       dataType="wstr"
-                      length="255"
+                      length="150"
                       name="OutletName" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
@@ -995,15 +1181,75 @@ where [refTable].[OutletName] = ?</property>
                       length="100"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                      dataType="wstr"
-                      length="100"
-                      name="State" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                       dataType="wstr"
                       length="100"
                       name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutletCode]"
+                      dataType="wstr"
+                      length="50"
+                      name="OutletCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutletType]"
+                      dataType="wstr"
+                      length="50"
+                      name="OutletType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                      dataType="wstr"
+                      length="255"
+                      name="AddressLine1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine2]"
+                      dataType="wstr"
+                      length="255"
+                      name="AddressLine2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateProvince]"
+                      dataType="wstr"
+                      length="100"
+                      name="StateProvince" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="PostCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="50"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="150"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ManagerName]"
+                      dataType="wstr"
+                      length="150"
+                      name="ManagerName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsActive]"
+                      dataType="bool"
+                      name="IsActive" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MsgKey]"
+                      dataType="guid"
+                      name="MsgKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExportFlag]"
+                      dataType="i4"
+                      name="ExportFlag" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1090,6 +1336,23 @@ where [refTable].[OutletName] = ?</property>
                           name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[OutletCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OutletCode"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[OutletCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1128,6 +1391,21 @@ where [refTable].[OutletName] = ?</property>
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
                           name="SortColumnId">#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[OutletName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[OutletCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[OutletCode]"
+                      name="OutletCode"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[OutletCode]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1193,6 +1471,23 @@ where [refTable].[OutletName] = ?</property>
                           name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[OutletCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OutletCode"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[OutletCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1233,6 +1528,21 @@ where [refTable].[OutletName] = ?</property>
                           name="SortColumnId">#{Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[OutletName]}</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[OutletCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[OutletCode]"
+                      name="OutletCode"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[OutletCode]}</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1264,6 +1574,20 @@ where [refTable].[OutletName] = ?</property>
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletName]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[OutletCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OutletCode"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[OutletCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletCode]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1284,6 +1608,20 @@ where [refTable].[OutletName] = ?</property>
                           dataType="System.Int32"
                           description="Output column lineage ID"
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[OutletCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OutletCode"
+                      lineageId="Package\Data Flow Task\Aggregate 1.Outputs[Aggregate Output 1].Columns[OutletCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletCode]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1308,6 +1646,12 @@ where [refTable].[OutletName] = ?</property>
                       length="50"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletName]"
                       name="OutletName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[OutletCode]"
+                      name="OutletCode" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1453,39 +1797,33 @@ where [refTable].[OutletName] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="108,42"
+          Id="Package\Data Flow Task\Sort 2"
+          TopLeft="526,196" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="675,334" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Data Flow Task\Aggregate 2"
+          TopLeft="902,232" />
+        <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="28,64" />
         <NodeLayout
-          Size="165,42"
-          Id="Package\Data Flow Task\Flat File Source 1"
-          TopLeft="48,192" />
+          Size="123,42"
+          Id="Package\Data Flow Task\Union All"
+          TopLeft="910,126" />
         <NodeLayout
-          Size="158,42"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="311,64" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="184,85">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="127,0"
-              Start="0,0"
-              End="119.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="119.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="167,42"
+          Id="Package\Data Flow Task\Derived Column 1"
+          TopLeft="293,191" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="356,371" />
         <NodeLayout
           Size="99,42"
           Id="Package\Data Flow Task\Sort"
@@ -1494,6 +1832,74 @@ where [refTable].[OutletName] = ?</property>
           Size="139,42"
           Id="Package\Data Flow Task\Aggregate 1"
           TopLeft="725,53" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Data Flow Task\Flat File Source 1"
+          TopLeft="48,192" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="311,64" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Data Flow Task\Aggregate"
+          TopLeft="711,193" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="990.666666666667,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.1666666666666,64"
+              Start="0,0"
+              End="-19.1666666666666,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0930979133226" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.0930979133226"
+                    Point2="0,26.0930979133226"
+                    Point3="-4,26.0930979133226" />
+                  <mssgle:LineSegment
+                    End="-15.1666666666666,26.0930979133226" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.1666666666666,26.0930979133226"
+                    Point2="-19.1666666666666,26.0930979133226"
+                    Point3="-19.1666666666666,30.0930979133226" />
+                  <mssgle:LineSegment
+                    End="-19.1666666666666,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output1]"
+          TopLeft="634,215.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77,0"
+              Start="0,0"
+              End="69.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="69.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Sort Output]"
           TopLeft="618,77.5">
@@ -1516,10 +1922,42 @@ where [refTable].[OutletName] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Data Flow Task\Derived Column 1"
-          TopLeft="293,191" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="675,355">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-142,37"
+              Start="0,0"
+              End="-134.5,37">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-67,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67,0"
+                    Point2="-71,0"
+                    Point3="-71,4" />
+                  <mssgle:LineSegment
+                    End="-71,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-71,33"
+                    Point2="-71,37"
+                    Point3="-75,37" />
+                  <mssgle:LineSegment
+                    End="-134.5,37" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-135.6750390625,-22,129.350078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
           TopLeft="213,212.5">
@@ -1534,6 +1972,50 @@ where [refTable].[OutletName] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="72.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="184,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127,0"
+              Start="0,0"
+              End="119.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="119.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="460,214.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1564,88 +2046,32 @@ where [refTable].[OutletName] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Data Flow Task\Sort 2"
-          TopLeft="526,196" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="460,214.5">
+          Id="Package\Data Flow Task.Paths[Aggregate Output 12]"
+          TopLeft="971.5,274">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66,0"
+              EndConnector="-239,60"
               Start="0,0"
-              End="58.5,0">
+              End="-239,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="58.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Data Flow Task\Aggregate"
-          TopLeft="711,193" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output1]"
-          TopLeft="634,215.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="77,0"
-              Start="0,0"
-              End="69.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="69.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Data Flow Task\Union All"
-          TopLeft="910,126" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Aggregate Output 1]"
-          TopLeft="776,193">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="195.5,-25"
-              Start="0,0"
-              End="195.5,-17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-8.5" />
+                    End="0,26" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-8.5"
-                    Point2="0,-12.5"
-                    Point3="4,-12.5" />
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
                   <mssgle:LineSegment
-                    End="191.5,-12.5" />
+                    End="-235,30" />
                   <mssgle:CubicBezierSegment
-                    Point1="191.5,-12.5"
-                    Point2="195.5,-12.5"
-                    Point3="195.5,-16.5" />
+                    Point1="-235,30"
+                    Point2="-239,30"
+                    Point3="-239,34" />
                   <mssgle:LineSegment
-                    End="195.5,-17.5" />
+                    End="-239,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1688,120 +2114,38 @@ where [refTable].[OutletName] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="356,371" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Data Flow Task\Aggregate 2"
-          TopLeft="902,232" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="990.666666666667,168">
+          Id="Package\Data Flow Task.Paths[Aggregate Output 1]"
+          TopLeft="776,193">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-19.1666666666666,64"
+              EndConnector="195.5,-25"
               Start="0,0"
-              End="-19.1666666666666,56.5">
+              End="195.5,-17.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.0930979133226" />
+                    End="0,-8.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.0930979133226"
-                    Point2="0,26.0930979133226"
-                    Point3="-4,26.0930979133226" />
+                    Point1="0,-8.5"
+                    Point2="0,-12.5"
+                    Point3="4,-12.5" />
                   <mssgle:LineSegment
-                    End="-15.1666666666666,26.0930979133226" />
+                    End="191.5,-12.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-15.1666666666666,26.0930979133226"
-                    Point2="-19.1666666666666,26.0930979133226"
-                    Point3="-19.1666666666666,30.0930979133226" />
+                    Point1="191.5,-12.5"
+                    Point2="195.5,-12.5"
+                    Point3="195.5,-16.5" />
                   <mssgle:LineSegment
-                    End="-19.1666666666666,56.5" />
+                    End="195.5,-17.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="115,42"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="675,334" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Aggregate Output 12]"
-          TopLeft="971.5,274">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-239,60"
-              Start="0,0"
-              End="-239,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
-                  <mssgle:LineSegment
-                    End="-235,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-235,30"
-                    Point2="-239,30"
-                    Point3="-239,34" />
-                  <mssgle:LineSegment
-                    End="-239,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="675,355">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-142,37"
-              Start="0,0"
-              End="-134.5,37">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-67,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-67,0"
-                    Point2="-71,0"
-                    Point3="-71,4" />
-                  <mssgle:LineSegment
-                    End="-71,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-71,33"
-                    Point2="-71,37"
-                    Point3="-75,37" />
-                  <mssgle:LineSegment
-                    End="-134.5,37" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-126.80638671875,-17.609375,111.6127734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

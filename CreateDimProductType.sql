@@ -13,9 +13,9 @@ GO
 CREATE TABLE abc_dwh.DimProductType
 (
     ProductTypeKey     INT IDENTITY(1,1) PRIMARY KEY,       -- Surrogate key (PK)
-    ProductTypeName    VARCHAR(100)    NOT NULL,            -- e.g., 'ACCESSORY', 'IMAGING', 'CAMCORDER'
-    ProductTypeDesc    VARCHAR(255)    NULL,                -- Optional: longer description
-    CategoryGroup      VARCHAR(100)    NULL,                -- Optional: higher-level grouping (e.g. 'Electronics')
+    ProductTypeName    NVARCHAR(100)    NOT NULL,            -- e.g., 'ACCESSORY', 'IMAGING', 'CAMCORDER'
+    ProductTypeDesc    NVARCHAR(255)    NULL,                -- Optional: longer description
+    CategoryGroup      NVARCHAR(100)    NULL,                -- Optional: higher-level grouping (e.g. 'Electronics')
     IsActive           BIT             NOT NULL DEFAULT 1,  -- 1 = active, 0 = inactive
     CreatedDate        DATETIME        NOT NULL DEFAULT GETDATE(),  -- ETL insertion timestamp
     UpdatedDate        DATETIME        NULL,                 -- Optional: track last update

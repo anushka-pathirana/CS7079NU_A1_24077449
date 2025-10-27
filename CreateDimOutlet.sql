@@ -13,18 +13,18 @@ GO
 CREATE TABLE abc_dwh.DimOutlet
 (
     OutletKey          INT IDENTITY(1,1) PRIMARY KEY,         -- Surrogate key (PK)
-    OutletCode         VARCHAR(50)     NOT NULL,              -- Unique store code (e.g., 'ABC001')
-    OutletName         VARCHAR(150)    NOT NULL,              -- Outlet or store name (e.g., 'ABC Warehouse')
-    OutletType         VARCHAR(50)     NULL,                  -- e.g., 'Retail Store', 'Warehouse', 'Online'
-    AddressLine1       VARCHAR(255)    NULL,
-    AddressLine2       VARCHAR(255)    NULL,
-    City               VARCHAR(100)    NULL,
-    StateProvince      VARCHAR(100)    NULL,
-    PostCode           VARCHAR(20)     NULL,
-    Country            VARCHAR(100)    NULL,
-    Phone              VARCHAR(50)     NULL,
-    Email              VARCHAR(150)    NULL,
-    ManagerName        VARCHAR(150)    NULL,                  -- Optional: store manager
+    OutletCode         NVARCHAR(50)     NOT NULL,              -- Unique store code (e.g., 'ABC001')
+    OutletName         NVARCHAR(150)    NOT NULL,              -- Outlet or store name (e.g., 'ABC Warehouse')
+    OutletType         NVARCHAR(50)     NULL,                  -- e.g., 'Retail Store', 'Warehouse', 'Online'
+    AddressLine1       NVARCHAR(255)    NULL,
+    AddressLine2       NVARCHAR(255)    NULL,
+    City               NVARCHAR(100)    NULL,
+    StateProvince      NVARCHAR(100)    NULL,
+    PostCode           NVARCHAR(20)     NULL,
+    Country            NVARCHAR(100)    NULL,
+    Phone              NVARCHAR(50)     NULL,
+    Email              NVARCHAR(150)    NULL,
+    ManagerName        NVARCHAR(150)    NULL,                  -- Optional: store manager
     IsActive           BIT             NOT NULL DEFAULT 1,    -- 1=Active, 0=Inactive
     CreatedDate        DATETIME        NOT NULL DEFAULT GETDATE(),
     UpdatedDate        DATETIME        NULL,

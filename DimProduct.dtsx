@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="Package1"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{B629A138-680C-4B78-9355-4DF1AA979D20}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{F0A1057E-9EF8-405C-88B6-34F1AC06F467}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -61,13 +61,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task 1\Destination - Product"
+              refId="Package\Data Flow Task 1\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Destination - Product"
+              name="OLE DB Destination"
               usesDispositions="true"
-              validateExternalMetadata="False"
               version="4">
               <properties>
                 <property
@@ -119,170 +118,205 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task 1\Destination - Product.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  refId="Package\Data Flow Task 1\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{249DE10A-D865-4592-A049-BBB588EE2C61}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CM_OLEDB_DWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input]"
+                  refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
-                  name="Destination Input">
+                  name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[ProductTypeKey]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductTypeKey]"
                       cachedDataType="i4"
                       cachedName="ProductTypeKey"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[ProductTypeKey]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductTypeKey]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[ProductTypeKey]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[ProductBrandKey]"
-                      cachedDataType="i4"
-                      cachedName="ProductBrandKey"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[ProductBrandKey]"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[ProductBrandKey]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[SupplierKey]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SupplierKey]"
                       cachedDataType="i8"
                       cachedName="SupplierKey"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[SupplierKey]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[SupplierKey]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[SKU]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="SKU"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[SKU]"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[SKU]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[PRODUCTNAME]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCTNAME]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="PRODUCTNAME"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[PRODUCTNAME]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PRODUCTNAME]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[DESCRIPTION]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DESCRIPTION]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DESCRIPTION"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[DESCRIPTION]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[DESCRIPTION]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[CONDITION]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CONDITION]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="CONDITION"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[CONDITION]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Condition]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[CONDITION]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[CostPrice]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CostPrice]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="CostPrice"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[CostPrice]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostPrice]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[CostPrice]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[RetailPrice]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RetailPrice]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="RetailPrice"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[RetailPrice]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RetailPrice]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[RetailPrice]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[Isactive]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Isactive]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Isactive"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[Isactive]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsActive]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Isactive]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].Columns[CurrentStockLevel]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BrandKey]"
+                      cachedDataType="i4"
+                      cachedName="BrandKey"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrandKey]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[BrandKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tags]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="CurrentStockLevel"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[CurrentStockLevel]"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[CurrentStockLevel]" />
+                      cachedName="Tags"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tags]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Tags]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SKU]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SKU"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductSKU]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[SKU]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[ProductTypeKey]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductSKU]"
+                      dataType="wstr"
+                      length="50"
+                      name="ProductSKU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="255"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Condition]"
+                      dataType="wstr"
+                      length="50"
+                      name="Condition" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductTypeKey]"
                       dataType="i4"
                       name="ProductTypeKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[ProductBrandKey]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrandKey]"
                       dataType="i4"
-                      name="ProductBrandKey" />
+                      name="BrandKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[SupplierKey]"
-                      dataType="i8"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
+                      dataType="i4"
                       name="SupplierKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[SKU]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tags]"
                       dataType="wstr"
-                      length="50"
-                      name="SKU" />
+                      length="255"
+                      name="Tags" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[PRODUCTNAME]"
-                      dataType="wstr"
-                      length="50"
-                      name="PRODUCTNAME" />
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostPrice]"
+                      dataType="numeric"
+                      name="CostPrice"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[DESCRIPTION]"
-                      dataType="wstr"
-                      length="50"
-                      name="DESCRIPTION" />
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RetailPrice]"
+                      dataType="numeric"
+                      name="RetailPrice"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[CONDITION]"
-                      dataType="wstr"
-                      length="50"
-                      name="CONDITION" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[CostPrice]"
-                      dataType="wstr"
-                      length="50"
-                      name="CostPrice" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[RetailPrice]"
-                      dataType="wstr"
-                      length="50"
-                      name="RetailPrice" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[Isactive]"
-                      dataType="wstr"
-                      length="50"
-                      name="Isactive" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input].ExternalColumns[CurrentStockLevel]"
-                      dataType="wstr"
-                      length="50"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrentStockLevel]"
+                      dataType="i4"
                       name="CurrentStockLevel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateCreatedAt]"
+                      dataType="wstr"
+                      length="10"
+                      name="DateCreatedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateDiscontinuedAt]"
+                      dataType="wstr"
+                      length="10"
+                      name="DateDiscontinuedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsActive]"
+                      dataType="bool"
+                      name="IsActive" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MsgKey]"
+                      dataType="guid"
+                      name="MsgKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExportFlag]"
+                      dataType="i4"
+                      name="ExportFlag" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task 1\Destination - Product.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input]">
+                  synchronousInputId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\Destination - Product.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Destination - Product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\Destination - Product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -315,9 +349,9 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  DISTINCT 
 pt.ProductTypeKey
-,pb.ProductBrandKey
+,pb.BrandKey
 , sp.SupplierKey
 ,t.SKU
 , t.PRODUCTNAME
@@ -326,7 +360,7 @@ pt.ProductTypeKey
 ,  t.CostPrice
 , t.RetailPrice
 , t.Isactive
-,t.CurrentStockLevel 
+, t.Tags
 
 
 from 
@@ -338,7 +372,7 @@ union all
 select * from [abc_stg].[SampleOfProductsDay3]
 ) t
 LEFT JOIN [abc_dwh].[DimProductType] pt on pt.ProductTypeName = UPPER(TRIM(t.ProductType))
-LEFT JOIN [abc_dwh].[DimProductBrand] pb on pb.Brandname = UPPER(TRIM(t.Brand))
+LEFT JOIN [abc_dwh].[DimBrand] pb on pb.Brandname = UPPER(TRIM(t.Brand))
 LEFT JOIN [abc_dwh].[DimSupplier] sp on sp.SupplierName = UPPER(TRIM(t.SupplierName))</property>
                 <property
                   dataType="System.String"
@@ -383,15 +417,6 @@ LEFT JOIN [abc_dwh].[DimSupplier] sp on sp.SupplierName = UPPER(TRIM(t.SupplierN
                       externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[ProductTypeKey]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[ProductTypeKey]"
                       name="ProductTypeKey"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[ProductBrandKey]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[ProductBrandKey]"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[ProductBrandKey]"
-                      name="ProductBrandKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[SupplierKey]"
@@ -473,14 +498,23 @@ LEFT JOIN [abc_dwh].[DimSupplier] sp on sp.SupplierName = UPPER(TRIM(t.SupplierN
                       name="Isactive"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[CurrentStockLevel]"
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[BrandKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[BrandKey]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[BrandKey]"
+                      name="BrandKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Tags]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[CurrentStockLevel]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Tags]"
                       length="50"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[CurrentStockLevel]"
-                      name="CurrentStockLevel"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Tags]"
+                      name="Tags"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -490,12 +524,8 @@ LEFT JOIN [abc_dwh].[DimSupplier] sp on sp.SupplierName = UPPER(TRIM(t.SupplierN
                       dataType="i4"
                       name="ProductTypeKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[ProductBrandKey]"
-                      dataType="i4"
-                      name="ProductBrandKey" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[SupplierKey]"
-                      dataType="i8"
+                      dataType="i4"
                       name="SupplierKey" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[SKU]"
@@ -533,10 +563,14 @@ LEFT JOIN [abc_dwh].[DimSupplier] sp on sp.SupplierName = UPPER(TRIM(t.SupplierN
                       length="50"
                       name="Isactive" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[CurrentStockLevel]"
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[BrandKey]"
+                      dataType="i4"
+                      name="BrandKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Tags]"
                       dataType="wstr"
                       length="50"
-                      name="CurrentStockLevel" />
+                      name="Tags" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -550,13 +584,13 @@ LEFT JOIN [abc_dwh].[DimSupplier] sp on sp.SupplierName = UPPER(TRIM(t.SupplierN
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ProductTypeKey]"
                       name="ProductTypeKey" />
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ProductBrandKey]"
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[BrandKey]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ProductBrandKey]"
-                      name="ProductBrandKey" />
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[BrandKey]"
+                      name="BrandKey" />
                     <outputColumn
                       refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[SupplierKey]"
-                      dataType="i8"
+                      dataType="i4"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[SupplierKey]"
                       name="SupplierKey" />
                     <outputColumn
@@ -602,11 +636,11 @@ LEFT JOIN [abc_dwh].[DimSupplier] sp on sp.SupplierName = UPPER(TRIM(t.SupplierN
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Isactive]"
                       name="Isactive" />
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[CurrentStockLevel]"
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Tags]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[CurrentStockLevel]"
-                      name="CurrentStockLevel" />
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Tags]"
+                      name="Tags" />
                     <outputColumn
                       refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -628,7 +662,7 @@ LEFT JOIN [abc_dwh].[DimSupplier] sp on sp.SupplierName = UPPER(TRIM(t.SupplierN
           <paths>
             <path
               refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task 1\Destination - Product.Inputs[Destination Input]"
+              endId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output]" />
           </paths>
@@ -712,42 +746,56 @@ LEFT JOIN [abc_dwh].[DimSupplier] sp on sp.SupplierName = UPPER(TRIM(t.SupplierN
     design-time-name="Package\Data Flow Task 1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Data Flow Task 1\OLE DB Destination"
+          TopLeft="137,119" />
         <NodeLayout
           Size="153,42"
           Id="Package\Data Flow Task 1\Source - Query"
           TopLeft="20,5.5" />
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Data Flow Task 1\Destination - Product"
-          TopLeft="5.50000000000001,107.5" />
         <EdgeLayout
           Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
           TopLeft="96.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="129,71.5"
               Start="0,0"
-              End="0,52.5">
+              End="129,64">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,31.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.75"
+                    Point2="0,35.75"
+                    Point3="4,35.75" />
+                  <mssgle:LineSegment
+                    End="125,35.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125,35.75"
+                    Point2="129,35.75"
+                    Point3="129,39.75" />
+                  <mssgle:LineSegment
+                    End="129,64" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="56.5,40.75,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task 1\Destination - Product">
+    design-time-name="Package\Data Flow Task 1\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

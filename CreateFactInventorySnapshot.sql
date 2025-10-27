@@ -11,12 +11,12 @@ CREATE TABLE abc_dwh.FactInventorySnapshot
 
     SnapshotDateKey     INT         NOT NULL,  -- -> DimDate.DateKey (EoD date)
     ProductKey          INT         NOT NULL,  -- -> DimProduct
-    OutletKey           INT         NOT NULL,  -- -> DimOutlet
+    OutletKey           INT         NULL,  -- -> DimOutlet
 
     -- Measures
     QtyOnHand           DECIMAL(18,4) NOT NULL DEFAULT 0,
-    QtyAllocated        DECIMAL(18,4) NOT NULL DEFAULT 0,
-    QtyOnOrder          DECIMAL(18,4) NOT NULL DEFAULT 0,
+    QtyAllocated        DECIMAL(18,4) NULL DEFAULT 0,
+    QtyOnOrder          DECIMAL(18,4) NULL DEFAULT 0,
     AvgUnitCost         DECIMAL(19,4) NULL,   -- optional moving average
     InventoryValue      AS (ISNULL(QtyOnHand,0) * ISNULL(AvgUnitCost,0)) PERSISTED,
 

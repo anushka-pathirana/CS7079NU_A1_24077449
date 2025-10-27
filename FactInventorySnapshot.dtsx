@@ -1,0 +1,715 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/27/2025 2:55:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-OOETEMG"
+  DTS:CreatorName="DESKTOP-OOETEMG\Anu"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{F91BFA6F-2E5A-46E8-99D7-7471F613094B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Package1"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{00B2E3AB-9F0C-466C-AA62-7E466EF0007E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2C65CB3E-A00C-4A75-A000-B82CD6E36525}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=&quot;&quot;;Initial Catalog=ABCDWH;Provider=MSOLEDBSQL;Integrated Security=SSPI;Persist Security Info=False;Initial File Name=&quot;&quot;;Server SPN=&quot;&quot;;Authentication=&quot;&quot;;Access Token=&quot;&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4E745E30-4C76-4F56-9F7F-5BD93A60A91C}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=&quot;&quot;;Initial Catalog=ABCDWH;Provider=MSOLEDBSQL;Integrated Security=SSPI;Persist Security Info=False;Initial File Name=&quot;&quot;;Server SPN=&quot;&quot;;Authentication=&quot;&quot;;Access Token=&quot;&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{1FC12F20-EFAD-42C0-BA32-1C44CE886494}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[CurrentStockLevel]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CurrentStockLevel"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[CurrentStockLevel]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CurrentStockLevel]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CurrentStockLevel]"
+                      name="CurrentStockLevel"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[CurrentStockLevel]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - FactInventorySnapshot"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[abc_dwh].[FactInventorySnapshot]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[SnapshotDateKey]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[ProductKey]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[ProductKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].Columns[CurrentStockLevel]"
+                      cachedDataType="numeric"
+                      cachedName="CurrentStockLevel"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[QtyOnHand]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CurrentStockLevel]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[FactInvSnapKey]"
+                      dataType="i8"
+                      name="FactInvSnapKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[SnapshotDateKey]"
+                      dataType="i4"
+                      name="SnapshotDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[OutletKey]"
+                      dataType="i4"
+                      name="OutletKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[QtyOnHand]"
+                      dataType="numeric"
+                      name="QtyOnHand"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[QtyAllocated]"
+                      dataType="numeric"
+                      name="QtyAllocated"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[QtyOnOrder]"
+                      dataType="numeric"
+                      name="QtyOnOrder"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[AvgUnitCost]"
+                      dataType="numeric"
+                      name="AvgUnitCost"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[InventoryValue]"
+                      dataType="numeric"
+                      name="InventoryValue"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[MsgKey]"
+                      dataType="guid"
+                      name="MsgKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input].ExternalColumns[ExportFlag]"
+                      dataType="i4"
+                      name="ExportFlag" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - Query"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - Query"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+
+        dt.DateKey
+      , itm.ProductKey
+      , st.CurrentStockLevel 
+
+FROM
+
+(
+SELECT [SKU]
+      ,[ProductName]
+      ,[Description]
+      ,[Condition]
+      ,[ProductType]
+      ,[Brand]
+      ,[SupplierName]
+      ,[Tags]
+      ,[CostPrice]
+      ,[RetailPrice]
+      ,[CurrentStockLevel]
+      ,[DateCreatedAt]
+      ,[DateDiscontinuedAt]
+      ,[IsActive]
+      ,  CONVERT( Date, '10/05/2015' ,105 ) SnapshotDate
+  
+  FROM abc_stg.[SampleOfProductsDay1]
+
+  UNION ALL
+
+  SELECT [SKU]
+      ,[ProductName]
+      ,[Description]
+      ,[Condition]
+      ,[ProductType]
+      ,[Brand]
+      ,[SupplierName]
+      ,[Tags]
+      ,[CostPrice]
+      ,[RetailPrice]
+      ,[CurrentStockLevel]
+      ,[DateCreatedAt]
+      ,[DateDiscontinuedAt]
+      ,[IsActive]
+      ,  CONVERT( Date, '11/05/2015' ,105 ) SnapshotDate
+  
+  FROM abc_stg.[SampleOfProductsDay2]
+
+  UNION ALL
+
+  SELECT [SKU]
+      ,[ProductName]
+      ,[Description]
+      ,[Condition]
+      ,[ProductType]
+      ,[Brand]
+      ,[SupplierName]
+      ,[Tags]
+      ,[CostPrice]
+      ,[RetailPrice]
+      ,[CurrentStockLevel]
+      ,[DateCreatedAt]
+      ,[DateDiscontinuedAt]
+      ,[IsActive]
+      ,  CONVERT( Date, '12/05/2015' ,105 ) SnapshotDate
+  
+  FROM abc_stg.[SampleOfProductsDay3]
+) ST
+ left join abc_dwh.dimdate dt on dt.FullDate = CONVERT( Date,st.SnapshotDate ,105 )
+  left join abc_dwh.DimProduct itm on itm.PRODUCTSKU = st.SKU</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - Query.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[CurrentStockLevel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[CurrentStockLevel]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[CurrentStockLevel]"
+                      name="CurrentStockLevel"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[CurrentStockLevel]"
+                      dataType="wstr"
+                      length="50"
+                      name="CurrentStockLevel" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[CurrentStockLevel]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[CurrentStockLevel]"
+                      name="CurrentStockLevel" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - FactInventorySnapshot.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{18304215-7E73-4E64-A098-2FC24EB5F9D5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{249DE10A-D865-4592-A049-BBB588EE2C61}"
+          SQLTask:SqlStatementSource="DELETE [abc_dwh].[FactInventorySnapshot]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{11A9DBD8-B3EC-4F11-A597-C35FDC611029}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow Task 1"
+          TopLeft="71.5,173.5" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="81,73" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="166,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.5,58.5"
+              Start="0,0"
+              End="-12.5,51">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.25"
+                    Point2="0,29.25"
+                    Point3="-4,29.25" />
+                  <mssgle:LineSegment
+                    End="-8.5,29.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.5,29.25"
+                    Point2="-12.5,29.25"
+                    Point3="-12.5,33.25" />
+                  <mssgle:LineSegment
+                    End="-12.5,51" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="257,42"
+          Id="Package\Data Flow Task 1\Destination - FactInventorySnapshot"
+          TopLeft="12.5,238.5" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow Task 1\Data Conversion 0 - 0"
+          TopLeft="41,107.5" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task 1\Source - Query"
+          TopLeft="57.5,5.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+          TopLeft="134,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+          TopLeft="137.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,32.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - FactInventorySnapshot">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
